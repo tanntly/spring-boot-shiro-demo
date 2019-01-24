@@ -2,7 +2,6 @@ package cn.tanntly.webapp.module.controller;
 
 import cn.tanntly.dao.UserRepository;
 import cn.tanntly.entity.User;
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,19 +23,6 @@ public class UserController {
         return user;
 
     }
-
-=======
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-public class UserController {
-
 
     @RequestMapping(value = "/index")
     public String index(){
@@ -62,5 +48,4 @@ public class UserController {
     public String create(){
         return "Create success!";
     }
->>>>>>> completed demo
 }
