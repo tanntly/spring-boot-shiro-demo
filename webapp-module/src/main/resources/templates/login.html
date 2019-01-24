@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+<body>
+
+<div>
+    <form id="login_form" action="login" method="post">
+        <div>
+            <label for="username">用户名：</label>
+            <input id="username" name="username" type="text">
+        </div>
+        <div>
+            <label for="username">密码：</label>
+            <input id="password" name="password" type="text">
+        </div>
+        <div>
+            <button onclick="login()" type="button">登录</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    function login(){
+        var user = {
+            "userName":"",
+            "password":""
+        }
+        user.userName=$('#username').val();
+        user.password=$('#password').val();
+        $.ajax({
+            type: 'post',
+            url: "/login",
+            data: JSON.stringify(user),
+            contentType: 'application/json',
+            success:function (data) {
+                alert(data)
+            },error:function () {
+                alert("request failed");
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
